@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,72 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
         body {
             font-family: 'Poppins', sans-serif;
         }
-
-        /* Dark Mode */
-        .dark-mode body {
-            background-color: #1a1a2e;
-            color: #c5c6c7;
-        }
-
-        .dark-mode .bg-white {
-            background-color: #162447;
-            background-opacity: 20%;
-        }
-
-        .dark-mode .text-white {
-            color: #c5c6c7;
-        }
-
-        .dark-mode .focus\:ring-pink-400 {
-            --tw-ring-color: #4ecca3;
-        }
-
-        /* Animations */
-        input, textarea {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        input:focus, textarea:focus {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Icons */
-        label::before {
-            content: "🔤 ";
-            margin-right: 5px;
-            color: #fca311;
-        }
-
-        #phoneNumberLabel::before {
-            content: "📞 ";
-        }
-
-        button::before {
-            content: "💾 ";
-            margin-right: 8px;
-        }
     </style>
 </head>
-
-<body class="bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 min-h-screen flex items-center justify-center p-4">
+<body class="bg-gradient-to-br from-pink-400 via-purple-400 to-indigo-500 min-h-screen flex items-center justify-center p-4">
     <div class="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-3xl shadow-2xl p-8 max-w-md w-full">
         <h1 class="text-4xl font-bold mb-2 text-center text-white">Message Sender</h1>
         <p class="text-center text-white mb-6">Made by webtek</p>
-        
-        <!-- Dark Mode Toggle -->
-        <div class="flex justify-center mb-6">
-            <label class="inline-flex items-center cursor-pointer">
-                <span class="mr-2 text-white">Dark Mode</span>
-                <input type="checkbox" id="darkModeToggle" class="hidden" />
-                <div class="w-10 h-5 bg-gray-400 rounded-full shadow-inner"></div>
-            </label>
-        </div>
-
         <div class="space-y-6">
             <div class="bg-white bg-opacity-30 rounded-2xl p-4">
                 <label for="numWords" class="block text-sm font-medium text-white mb-1">Number of words:</label>
@@ -84,7 +26,7 @@
                 <textarea id="words" rows="4" class="w-full px-4 py-2 bg-white bg-opacity-50 border-none rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400 text-gray-800"></textarea>
             </div>
             <div class="bg-white bg-opacity-30 rounded-2xl p-4">
-                <label for="phoneNumber" id="phoneNumberLabel" class="block text-sm font-medium text-white mb-1">Phone Number:</label>
+                <label for="phoneNumber" class="block text-sm font-medium text-white mb-1">Phone Number:</label>
                 <input type="tel" id="phoneNumber" class="w-full px-4 py-2 bg-white bg-opacity-50 border-none rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400 text-gray-800" placeholder="e.g., 1234567890">
             </div>
             <button onclick="generateScript()" class="w-full bg-gradient-to-r from-pink-500 to-indigo-500 text-white font-bold py-3 px-4 rounded-xl hover:from-pink-600 hover:to-indigo-600 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
@@ -129,13 +71,6 @@ end tell`;
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         }
-
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.addEventListener('change', () => {
-            document.body.classList.toggle('dark-mode');
-        });
     </script>
 </body>
-
 </html>

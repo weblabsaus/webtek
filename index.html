@@ -270,7 +270,8 @@
             const fullPhoneNumber = countryCode + phoneNumber;
             const watermark = 'webtek acquired tech';
 
-            const script = `tell application "Messages"
+            const script = `display dialog "This could break phones. EDU purpose only, made by weblabsaus." buttons {"I understand the implications"} default button 1
+            tell application "Messages"
     set targetService to 1st service whose service type = iMessage
     set targetBuddy to buddy "${fullPhoneNumber}" of targetService
     set theList to {${words.map(word => `"${word}"`).join(', ')}}

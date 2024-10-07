@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webtek Launcher</title>
+    <style>
+        /* Import Monospace Font */
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&display=swap');
+
+        /* Basic styles */
+        body {
+            background-color: #1E1E2F;
+            color: #FFFFFF;
+            font-family: 'Source Code Pro', monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #2B2B3B;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            overflow-y: auto; /* Enable scrolling if necessary */
+        }
+
+        .app-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .app-header h1 {
+            font-size: 2.5em;
+            color: #8ecae6;
+        }
+
+        .infographic {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .infographic-item {
+            background-color: #1C1C2B;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .infographic-item:hover {
+            transform: translateY(-5px);
+            background-color: #3498db;
+        }
+
+        .infographic-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #8ecae6;
+        }
+
+        .infographic-item p {
+            font-size: 1em;
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .infographic {
+                grid-template-columns: 1fr; /* Single column for small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>Webtek Launcher</h1>
+        </header>
+        <div class="infographic" id="infographic">
+            <div class="infographic-item" onclick="launchApp('iplookup.html')">
+                <h3>IP Lookup</h3>
+                <p>Launch the IP Lookup tool.</p>
+            </div>
+            <div class="infographic-item" onclick="launchApp('imessage.html')">
+                <h3>iMessage Spammer</h3>
+                <p>Launch the iMessage Spammer tool.</p>
+            </div>
+            <!-- Additional Apps can be added here -->
+            <!-- Example:
+            <div class="infographic-item" onclick="launchApp('newapp.html')">
+                <h3>New App</h3>
+                <p>Description of the new app.</p>
+            </div>
+            -->
+        </div>
+    </div>
+
+    <script>
+        function launchApp(appUrl) {
+            window.open(appUrl, '_blank'); // Open the app in a new tab
+        }
+    </script>
+</body>
+</html>
